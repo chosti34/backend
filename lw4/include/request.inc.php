@@ -1,10 +1,18 @@
 <?php
     function getParamFromGet($parametr)
     {
-        return $str = $_GET[$parametr];
+        if (isset($_GET[$parametr]))
+        {
+            return $_GET[$parametr];
+        }
+        return "";
     }
-    
+
     function getParamFromPost($parametr)
     {
-        return $str = $_POST[$parametr];
+        if (isset($_POST[$parametr]))
+        {
+            return $_POST[$parametr];
+        }
+        return "";
     }
