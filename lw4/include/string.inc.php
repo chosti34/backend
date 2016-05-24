@@ -47,21 +47,18 @@
         {
             return 'no, first symbol is number';
         }
-        else
+        for ($i = 0; $i < $len; $i++)
         {
-            for ($i = 0; $i < $len; $i++)
+            if (!in_array($str[$i], $goodChars, TRUE))
             {
-                if (!in_array($str[$i], $goodChars, TRUE))
-                {
-                    break;
-                }
+                break;
             }
-            if ($i == $len)
-            {
-                return 'yes';
-            }
-            return 'no, "' . $str[$i] . '" found';
         }
+        if ($i == $len)
+        {
+            return 'yes';
+        }
+        return 'no, "' . $str[$i] . '" found';
     }
     
     function removeExtraBlanks($str)
