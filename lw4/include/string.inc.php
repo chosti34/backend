@@ -60,10 +60,7 @@
             {
                 return 'yes';
             }
-            else
-            {
-                return 'no, "' . $str[$i] . '" found';
-            }
+            return 'no, "' . $str[$i] . '" found';
         }
     }
     
