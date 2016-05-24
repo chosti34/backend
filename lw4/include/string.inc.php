@@ -22,12 +22,12 @@
     function reverse($str)
     {
         $len = strlen($str);
-        $string = '';
+        $newstr = '';
         for ($i = $len - 1; $i >= 0; $i--)
         {
-            $string = $string . $str[$i];
+            $newstr = $newstr . $str[$i];
         }
-        return $s;
+        return $newstr;
     }
     
     function checkIdentifier($str)
