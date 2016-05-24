@@ -45,7 +45,8 @@
       
         if (is_numeric($str[0]))
         {
-            return 'no, first symbol is number';
+            echo 'no, first symbol is number';
+            return FALSE;
         }
         for ($i = 0; $i < $len; $i++)
         {
@@ -56,9 +57,11 @@
         }
         if ($i == $len)
         {
-            return 'yes';
+            echo 'yes';
+            return TRUE;
         }
-        return 'no, "' . $str[$i] . '" found';
+        echo 'no, "' . $str[$i] . '" found';
+        return FALSE;
     }
     
     function removeExtraBlanks($str)
