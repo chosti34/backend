@@ -2,5 +2,12 @@
     function last($str)
     {
         $len = strlen($str);
-        return $str[$len - 1];
+        if ($len != 0)
+        {
+            return $str[$len - 1];
+        }
+        else
+        {
+            echo 'Введите строку';
+        }
     }
