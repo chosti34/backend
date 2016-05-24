@@ -16,16 +16,16 @@
         {
             return substr($str, 0, $len - 1);
         }
-        return $str;
+        return "";
     }
     
     function reverse($str)
     {
         $len = strlen($str);
-        $s = '';
+        $string = '';
         for ($i = $len - 1; $i >= 0; $i--)
         {
-            $s = $s . $str[$i];
+            $string = $string . $str[$i];
         }
         return $s;
     }
