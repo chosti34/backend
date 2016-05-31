@@ -37,7 +37,7 @@
         $symbols = range('a', 'z');
         $numbers = range('0', '9');
         $goodChars = array_merge($symbols, $numbers);
-      
+        
         foreach ($goodChars as &$element)
         {
             $element = (string)$element;
@@ -45,7 +45,7 @@
       
         if (is_numeric($str[0]))
         {
-            echo 'no, first symbol is number';
+            echo 'the first symbol is number, ';
             return FALSE;
         }
         for ($i = 0; $i < $len; $i++)
@@ -57,25 +57,18 @@
         }
         if ($i == $len)
         {
-            echo 'yes';
             return TRUE;
         }
-        echo 'no, "' . $str[$i] . '" found';
+        echo '"' . $str[$i] . '" found, ';
         return FALSE;
     }
     
     function removeExtraBlanks($str)
     {
-        $s = '';
+        $str = trim($str);
         $len = strlen($str);
-        $i = 0;
-        if ($str[$i] == ' ')
-        {
-            while ($str[$i] == ' ')
-            {
-                $i++;
-            }
-        }
+        $s = '';
+        
         for ($i; $i < $len; $i++)
         {
             if ($str[$i] == ' ' && $str[$i + 1] == ' ')
