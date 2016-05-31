@@ -9,7 +9,7 @@
         return "";
     }
     
-    function withoutlast($str)
+    function withoutLast($str)
     {
         $len = strlen($str);
         if ($len > 1)
