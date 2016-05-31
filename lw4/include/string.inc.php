@@ -84,6 +84,5 @@
                 $s = $s . $str[$i];
             }
         }
-        
         return $s;
     }
