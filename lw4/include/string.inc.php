@@ -22,44 +22,28 @@
     function reverse($str)
     {
         $len = strlen($str);
-        $newstr = '';
+        $newStr = '';
         for ($i = $len - 1; $i >= 0; $i--)
         {
-            $newstr = $newstr . $str[$i];
+            $newStr = $newStr . $str[$i];
         }
-        return $newstr;
+        return $newStr;
     }
     
     function checkIdentifier($str)
     {
         $len = strlen($str);
-        $str = strtolower($str);
-        $symbols = range('a', 'z');
-        $numbers = range('0', '9');
-        $goodChars = array_merge($symbols, $numbers);
         
-        foreach ($goodChars as &$element)
-        {
-            $element = (string)$element;
-        }
-      
         if (is_numeric($str[0]))
         {
-            echo 'the first symbol is number, ';
             return FALSE;
         }
-        for ($i = 0; $i < $len; $i++)
-        {
-            if (!in_array($str[$i], $goodChars, TRUE))
-            {
-                break;
-            }
-        }
-        if ($i == $len)
+        
+        if (ctype_alnum($str))
         {
             return TRUE;
         }
-        echo '"' . $str[$i] . '" found, ';
+        
         return FALSE;
     }
     
