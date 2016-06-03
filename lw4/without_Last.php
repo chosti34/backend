@@ -8,5 +8,5 @@
     }
     else
     {
-        echo reverse($str);
+        echo withoutlast($str);
     }

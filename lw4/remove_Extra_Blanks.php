@@ -1,12 +1,12 @@
 <?php
     require_once '/include/common.inc.php';
-  
-    $str = getParamFromGet('message');
+
+    $str = getParamFromGet('text');
     if (empty($str))
     {
         echo 'Введите строку';
     }
     else
     {
-        echo reverse($str);
+        echo removeExtraBlanks($str);
     }
