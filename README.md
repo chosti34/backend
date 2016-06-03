@@ -1,2 +1,2 @@
 # backend
-my repository for backend
+my repository for web
