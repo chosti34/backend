@@ -32,11 +32,7 @@
 
     function checkIdentifier($str)
     {
-        if (is_numeric($str[0]) || (!ctype_alnum($str)))
-        {
-            return false;
-        }
-        return true;
+        return (!is_numeric($str[0])) && (ctype_alnum($str));
     }
 
     function removeExtraBlanks($str)
@@ -44,21 +40,18 @@
         $str = trim($str);
         $len = strlen($str);
         $newStr = '';
-        $i = 0;
-        while ($i != $len)
+        $found = false;
+        for ($i = 0; $i < $len; $i++)
         {
-            if (($str[$i] == ' ') && ($str[$i + 1] == ' '))
+            if (($str[$i] == ' ') && (!$found))
             {
                 $newStr .= $str[$i];
-                while ($str[$i] == ' ')
-                {
-                    $i++;
-                }
+                $found = true;
             }
-            else
+            elseif ($str[$i] != ' ')
             {
                 $newStr .= $str[$i];
-                $i++;
+                $found = false;
             }
         }
         return $newStr;

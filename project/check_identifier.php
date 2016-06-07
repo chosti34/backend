@@ -12,9 +12,9 @@
         {
             echo 'yes';
         }
-        elseif (is_numeric($str[0]))
+        elseif (is_numeric($str[$i]))
         {
-            echo 'no, first character is number';
+            echo 'no, first is number';
         }
         else
         {
